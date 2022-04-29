@@ -12,14 +12,14 @@ namespace CoreEscuela.Entidades
         {
             get { return nombre; }
             set { nombre = value; }
-        } 
+        }
 
-        public int AñoDeCreación { get; set; }       
+        public int AñoDeCreación { get; set; }
         public string Pais { get; set; } = "";
         public string Ciudad { get; set; } = "";
         public TiposEscuela TipoEscuela { get; set; }
 
-        public Curso[] Cursos { get; set; }
+        public List<Curso> Cursos { get; set; }
 
 
         // public Escuela(string nombre, int año, string pais)
@@ -31,7 +31,7 @@ namespace CoreEscuela.Entidades
         public Escuela(string nombre,
                        int año,
                        string pais) => (Nombre, AñoDeCreación) = (nombre, año);
-        
+
         public Escuela(string nombre,
                        int año,
                        TiposEscuela tipo,
@@ -40,7 +40,7 @@ namespace CoreEscuela.Entidades
         {
             (Nombre, AñoDeCreación, Pais, Ciudad) = (nombre, año, pais, ciudad);
             TipoEscuela = tipo;
-        }            
+        }
 
 
 

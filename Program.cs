@@ -1,26 +1,19 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using CoreEscuela;
 using CoreEscuela.Entidades;
+using CoreEscuela.Util;
 using static System.Console;
 
-var escuela = new Escuela("Platzi", 2012, TiposEscuela.Primaria, "Chile", "Santiago");
-
-escuela.Cursos = new Curso[] {
-            new Curso(){ Nombre = "101"},
-            new Curso() {Nombre = "201"},
-            new Curso{Nombre = "301"}
-};
-
-ImprimirCursosEscuela(escuela);
-
-
-
+var engine = new EscuelaEngine();
+ImprimirCursosEscuela(engine.Escuela);
 
 // -------------------------------------------------------------------------------------------------------------------------
+/// <summary>
+/// 
 void ImprimirCursosEscuela(Escuela escuela)
 {
-    WriteLine("==============================");
-    WriteLine("Cursos de la Escuela");
-    WriteLine("==============================");
+
+    Printer.DibujarTitulo("Cursos de la Escuela");
 
     if (escuela?.Cursos != null)
     {
